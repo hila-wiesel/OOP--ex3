@@ -10,7 +10,8 @@ For this I implemented the abstract class:
 * GraphAlgoInterface - implemented by class [GraphAlgo](https://github.com/hila-wiesel/OOP--ex3/wiki/GraphAlgo)
 
 
-# Wiki page: https://github.com/hila-wiesel/OOP--ex3/wiki
+## Wiki page:
+ https://github.com/hila-wiesel/OOP--ex3/wiki
  There you can see deeper explantions about the project, and comperations of running-time of this project to others.
 
 
