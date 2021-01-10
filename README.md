@@ -1,4 +1,4 @@
-# Directed Wheighted Graph
+# Directed Weighted Graph
 ### Object oriented programming - ex3
 
 <img src= "images/graph.jpg" width=550 hight=100>
