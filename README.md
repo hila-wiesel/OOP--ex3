@@ -1,5 +1,9 @@
-# OOP--ex3
-An immplements directed wheighted graph
+# Directed Wheighted Graph
+### Object oriented programming - ex3
+
+<img src= "images/graph.jpg" width=550 hight=100>
+
+
 
 This project models data structures on directed weighted graphs, especially finding the shortest path and deciding and strongly connected components. We will use the data structures dictionary for saving collection of nodes for each graph- saving objects by their key, and also for saving collection of in edge and out edge for each node- saving the key of the neighbor and the weight. This data structures provides us easy way to get the nodes (by their key) , without knowing how many nodes will have in advance, and by O(1) running time.
 
