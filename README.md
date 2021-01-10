@@ -1,7 +1,7 @@
 # Directed Weighted Graph
 ### Object oriented programming - ex3
 
-<img src= "pictures/graph2.jpg" width=550 hight=100>
+<img src= "pictures/graph2.jpg", width=550 hight=100>
 
 
 
