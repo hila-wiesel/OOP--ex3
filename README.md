@@ -1,7 +1,8 @@
 # Directed Weighted Graph
 ### Object oriented programming - ex3
+<img src= "images/graph2.jpg" width=750 hight=100>
 
-<img src= "images/graph2.jpg" width=550 hight=100>
+
 
 
 
@@ -12,7 +13,6 @@ For this I implemented the abstract class:
 * GraphInterface - implemented by class [DiGraph](https://github.com/hila-wiesel/OOP--ex3/wiki/DiGraph)
 * Inside DiGraph class I implemented also an inner class [Node](https://github.com/hila-wiesel/OOP--ex3/wiki/Node)
 * GraphAlgoInterface - implemented by class [GraphAlgo](https://github.com/hila-wiesel/OOP--ex3/wiki/GraphAlgo)
-
 
 ## Wiki page:
  https://github.com/hila-wiesel/OOP--ex3/wiki.
