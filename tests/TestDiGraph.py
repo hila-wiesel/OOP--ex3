@@ -44,8 +44,8 @@ class TestDiGraph(unittest.TestCase):
         g.add_edge(5, 0, 1)
         g.add_edge(5, 3, 1)
         g.remove_node(0)
-        print("1 =", g.e_size)
-        # self.assertEqual(1, g.e_size())     # ##????
+        # print("1 =", g.e_size)
+        self.assertEqual(1, g.e_size)
 
     def test_remove_null(self):
         g = graph_builder(0)
@@ -59,7 +59,7 @@ class TestDiGraph(unittest.TestCase):
         g.remove_edge(0, 1)
         g.remove_edge(2, 3)
         e = g.e_size
-        print("2 =", g.e_size)
+        # print("2 =", g.e_size)
         self.assertEqual(2, e)
 
 

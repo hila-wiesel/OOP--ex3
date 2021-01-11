@@ -22,9 +22,17 @@ class GraphAlgo(GraphAlgoInterface, ABC):
             self.graph = DiGraph()
 
     def get_graph(self) -> GraphInterface:
+        """
+        :return: the directed graph on which the algorithm works on.
+        """
         return self.graph
 
     def load_from_json(self, file_name: str) -> bool:
+        """
+        Loads a graph from a json file.
+        @param file_name: The path to the json file
+        @returns True if the loading was successful, False o.w.
+        """
         g = DiGraph()
         try:
             with open(file_name, "r") as f:
@@ -45,6 +53,11 @@ class GraphAlgo(GraphAlgoInterface, ABC):
             return False
 
     def save_to_json(self, file_name: str) -> bool:
+        """
+        Saves the graph in JSON format to a file
+        @param file_name: The path to the out file
+        @return: True if the save was successful, False o.w.
+        """
         try:
             with open(file_name, "w") as file:
                 json.dump(self.graph, default=lambda m: m.as_dict(), indent=4, fp=file)
@@ -79,6 +92,14 @@ class GraphAlgo(GraphAlgoInterface, ABC):
         return dist, path
 
     def connected_component(self, id1: int) -> list:
+        """
+        Finds the Strongly Connected Component(SCC) that node id1 is a part of.
+        @param id1: The node id
+        @return: The list of nodes in the SCC
+
+        Notes:
+        If the graph is None or id1 is not in the graph, the function should return an empty list []
+        """
         if self.graph is None or id1 not in self.graph.get_all_v():
             return []
         nodes = self.graph.get_all_v().values()
@@ -87,28 +108,41 @@ class GraphAlgo(GraphAlgoInterface, ABC):
         way_to = self.bfs(id1, True)
         way_from = self.bfs(id1, False)
         scc = {}
-        # print("way_to:", way_to)
-        # print("way_from:", way_from)
         for n in way_to.keys():
-            if n in way_from.keys():
+            if way_from.get(n) is not None:
                 scc[n] = 1
         return list(scc.keys())
 
     def connected_components(self) -> List[list]:
+        """
+        Finds all the Strongly Connected Component(SCC) in the graph.
+        @return: The list all SCC
+
+        Notes:
+        If the graph is None the function should return an empty list []
+        """
         g = self.graph
         if g is None:
             return []
         scc = []
-        saw = []  # node that we already find their scc
+        # saw = []  # node that we already find their scc
+        saw = {}
         for node in g.get_all_v().values():
-            if node not in saw:
+            # if node not in saw:
+            if saw.get(node) is None:
                 temp_scc = self.connected_component(node.get_key())
                 scc.append(temp_scc)
-                for n in temp_scc:  # switch to saw.extend(temp_scc)    ??
-                    saw.append(n)
+                for n in temp_scc:
+                    saw[n] = 1
         return scc
 
     def plot_graph(self) -> None:
+        """
+        Plots the graph.
+        If the nodes have a position, the nodes will be placed there.
+        Otherwise, they will be placed in a random but elegant manner.
+        @return: None
+        """
         g = self.graph
         nodes = g.get_all_v().values()
         max_y = 0
