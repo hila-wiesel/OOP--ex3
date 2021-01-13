@@ -158,7 +158,7 @@ class DiGraph (GraphInterface):
         each node is represented using a pair (other_node_id, weight)
          """
         if id1 not in self.get_all_v():
-            return {}           # or None?
+            return None
         return self.get_node(id1).get_edge_in()
 
     def all_out_edges_of_node(self, id1: int) -> dict:
@@ -166,7 +166,7 @@ class DiGraph (GraphInterface):
         (other_node_id, weight)
         """
         if id1 not in self.get_all_v():
-            return {}
+            return None
         return self.get_node(id1).get_edge_out()
 
     def get_mc(self) -> int:
