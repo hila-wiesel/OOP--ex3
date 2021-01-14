@@ -241,7 +241,8 @@ class DiGraph (GraphInterface):
                 del ni_out[node_id]
                 num_del_edges += 1
         self.e_size -= num_del_edges
-        self.mc -= (num_del_edges+1)
+        # self.mc -= (num_del_edges+1)
+        --self.mc;
         return True
 
     def remove_edge(self, node_id1: int, node_id2: int) -> bool:
